@@ -1,21 +1,60 @@
-@tailwind base;
+@layer iap_reset, iap_base, iap_tokens, iap_recipes, iap_utilities;
+
+@layer iap_reset {
+  @tailwind base;
+}
+
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.dropdown__popover-container {
+  @apply rounded-none bg-violet-50 shadow-lg shadow-blue-100 border border-violet-200;
+}
+
+.dropdown__search-input {
+  @apply text-violet-700;
+}
+
+.dropdown__search-input::placeholder {
+  @apply text-violet-300;
+}
+
+.dropdown__search-divider {
+  @apply border-violet-200;
+}
+
+.dropdown__list {
+  background: transparent;
+}
+
+.dropdown__items-list-header {
+  @apply bg-violet-50 text-violet-700;
+}
+
+.dropdown__item {
+  @apply text-violet-700;
+}
+
+.dropdown__item:is([data-current], :hover) {
+  @apply bg-violet-100;
+}
+
+.dropdown__no-options-heading {
+  @apply text-violet-500;
+}
+
+.item_icon__icon {
+  @apply border-violet-300 bg-violet-200 text-violet-900;
+}
+
+.dropdown-back-button__title {
+  @apply text-violet-700;
 }
