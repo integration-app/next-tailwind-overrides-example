@@ -1,9 +1,10 @@
-"use client"
+'use client';
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DataInput, DataSchema } from "@integration-app/react";
 
-export function DataInputExample() {
+export default function DataInputExample() {
+  useEffect(() => {})
   const [value, setValue] = useState<unknown>({})
 
   const schema = {
