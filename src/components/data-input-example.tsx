@@ -1,9 +1,18 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import { DataInput, DataSchema } from "@integration-app/react";
+import type { DataSchema } from "@integration-app/react";
+import dynamic from "next/dynamic";
 
-export default function DataInputExample() {
+const DataInput = dynamic(
+  () => import("@integration-app/react").then((mod) => mod.DataInput),
+  {
+    ssr: false,
+    loading: () => <p>Loading...</p>,
+  }
+);
+
+export function DataInputExample() {
   useEffect(() => {})
   const [value, setValue] = useState<unknown>({})
 
